@@ -1,6 +1,6 @@
 package main;
 
-import pricing.TicketPrice;
+import location.Point;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,6 +32,10 @@ public class ChallengeMain {
                 } else {
                     myFlag = true;
                     System.out.println("Coordinates accepted: " + Arrays.toString(vars));
+                    Point userPoint = new Point(x,y);
+                    Point eventPoint = new Point(1,2);
+                    System.out.println("Distance " + userPoint.distanceTo(eventPoint));
+                    System.out.println("Distance " + userPoint.distanceToOrigin());
                 }
             } catch(NumberFormatException e) {
                 System.out.println("The coordinates are not a valid number or in the correct format.");
