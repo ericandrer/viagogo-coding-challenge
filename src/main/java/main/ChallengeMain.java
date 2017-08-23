@@ -37,14 +37,14 @@ public class ChallengeMain {
                     System.out.println("Distance " + userPoint.distanceTo(eventPoint));
                     System.out.println("Distance " + userPoint.distanceToOrigin());
                 }
-            } catch(NumberFormatException e) {
-                System.out.println("The coordinates are not a valid number or in the correct format.");
+            } catch(NumberFormatException | ArrayIndexOutOfBoundsException e ) {
+                System.out.println("The coordinates are invalid please check the correct format.");
                 System.out.println("E.g: 4,2");
                 //e.printStackTrace();
                 myFlag = false;
             }
 
-                //System.out.println(Arrays.toString(vars) + Arrays.toString(new ArrayList[]{myArray()}));
+            //System.out.println(Arrays.toString(vars) + Arrays.toString(new ArrayList[]{myArray()}));
         }
     }
 }
