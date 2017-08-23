@@ -33,9 +33,11 @@ public class ChallengeMain {
                     myFlag = true;
                     System.out.println("Coordinates accepted: " + Arrays.toString(vars));
                     Point userPoint = new Point(x,y);
-                    Point eventPoint = new Point(1,2);
+                    Point eventPoint = new Point();
+                    eventPoint.randomX();
+                    eventPoint.randomY();
+                    System.out.println(eventPoint.getX() + " " + eventPoint.getY());
                     System.out.println("Distance " + userPoint.distanceTo(eventPoint));
-                    System.out.println("Distance " + userPoint.distanceToOrigin());
                 }
             } catch(NumberFormatException | ArrayIndexOutOfBoundsException e ) {
                 System.out.println("The coordinates are invalid please check the correct format.");
