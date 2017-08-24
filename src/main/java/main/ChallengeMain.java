@@ -1,19 +1,12 @@
 package main;
 
+import event.EventId;
 import location.Point;
 import pricing.TicketPrice;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class ChallengeMain {
-
-/*    public static ArrayList<TicketPrice> myArray() {
-        ArrayList<TicketPrice> al = new ArrayList();
-        al.add(new TicketPrice());
-        return al;
-    }*/
 
     public static void main(String args[]) {
         System.out.println("Hello! Welcome to Viagogo Coding Challenge.");
@@ -36,17 +29,19 @@ public class ChallengeMain {
 
                     //TODO Complete loop for 10 times.
 
+                    EventId newEvent = new EventId();
+                    System.out.print("Event " + newEvent.uniqueId());
+
+                    TicketPrice tp = new TicketPrice();
+                    tp.price();
+                    System.out.print(" $" + tp.getPrice());
+
                     Point userPoint = new Point(x,y);
                     Point eventPoint = new Point();
                     eventPoint.randomX();
                     eventPoint.randomY();
-                    System.out.println(eventPoint.getX() + " " + eventPoint.getY());
-                    System.out.println("Distance " + userPoint.distanceTo(eventPoint));
-
-                    TicketPrice tp = new TicketPrice();
-                    tp.price();
-
-                    System.out.println("$" + tp.getPrice());
+                    System.out.println(" Event Location: X Axis " + eventPoint.getX() + " Y Axis " + eventPoint.getY());
+                    System.out.println("Your Distance to the event: " + userPoint.distanceTo(eventPoint));
 
                 }
             } catch(NumberFormatException | ArrayIndexOutOfBoundsException e ) {
