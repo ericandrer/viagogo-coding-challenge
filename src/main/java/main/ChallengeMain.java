@@ -1,6 +1,7 @@
 package main;
 
 import location.Point;
+import pricing.TicketPrice;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,12 +33,21 @@ public class ChallengeMain {
                 } else {
                     myFlag = true;
                     System.out.println("Coordinates accepted: " + Arrays.toString(vars));
+
+                    //TODO Complete loop for 10 times.
+
                     Point userPoint = new Point(x,y);
                     Point eventPoint = new Point();
                     eventPoint.randomX();
                     eventPoint.randomY();
                     System.out.println(eventPoint.getX() + " " + eventPoint.getY());
                     System.out.println("Distance " + userPoint.distanceTo(eventPoint));
+
+                    TicketPrice tp = new TicketPrice();
+                    tp.price();
+
+                    System.out.println("$" + tp.getPrice());
+
                 }
             } catch(NumberFormatException | ArrayIndexOutOfBoundsException e ) {
                 System.out.println("The coordinates are invalid please check the correct format.");
@@ -45,8 +55,6 @@ public class ChallengeMain {
                 //e.printStackTrace();
                 myFlag = false;
             }
-
-            //System.out.println(Arrays.toString(vars) + Arrays.toString(new ArrayList[]{myArray()}));
         }
     }
 }
