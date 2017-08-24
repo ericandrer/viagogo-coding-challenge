@@ -38,6 +38,8 @@ public class ChallengeMain {
 
                         data[i][0] = i;
 
+                        // Declaration and assignments.
+
                         EventId newEvent = new EventId();
                         int event = newEvent.uniqueId();
                         data[i][1] = event;
