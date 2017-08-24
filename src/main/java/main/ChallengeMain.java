@@ -4,7 +4,6 @@ import event.EventId;
 import location.Point;
 import pricing.TicketPrice;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class ChallengeMain {
@@ -17,9 +16,13 @@ public class ChallengeMain {
                 System.out.println("Please enter your coordinates: ");
                 Scanner in = new Scanner(System.in);
                 String coordinates = in.nextLine();
+
+                // Split the user input into an array for easy manipulation.
                 String[] vars= coordinates.split(",");
                 int x = Integer.parseInt(vars[0]);
                 int y = Integer.parseInt(vars[1]);
+
+                // Statement to check all the user inputs are valid.
                 if (x > 10 || y > 10 || x < -10 || y < -10) {
                     myFlag = false;
                     System.out.println("The coordinate ranges are from -10 to +10 (X axis), and -10 to +10 (Y axis).");
@@ -28,6 +31,7 @@ public class ChallengeMain {
                     myFlag = true;
                     System.out.println("Coordinates accepted: " + Arrays.toString(vars));
 
+                    // Bi-dimensional array declaration.
                     double[][] data = new double[10][4];
 
                     for (int i = 0 ; i < 10; i++) {
@@ -52,20 +56,13 @@ public class ChallengeMain {
                         data[i][3] = distance;
                     }
 
-                    /**
-                     * Using Interface Comparator for sorting distance.
-                     */
-                    Arrays.sort(data, new Comparator<double[]>() {
-                        @Override
-                        public int compare(double[] o1, double[] o2) {
-                            return (int) (o1[3] - o2[3]);
-                        }
-                    });
+                    // Lambda implementation for sorting the distance column using Comparator interface,
+                    Arrays.sort(data, (o1, o2) -> (int) (o1[3] - o2[3]));
 
                     // Printing statement for each of the results.
-                    for (int i = 0; i < data.length ; i++) {
-                        System.out.println("Event #" + data[i][0] + "\tTickets: " + data[i][1] +
-                                "\tPrice $" + data[i][2] + "\tDistance " + data[i][3]);
+                    for (double[] aData : data) {
+                        System.out.println("Event #" + aData[0] + "\tTickets: " + aData[1] +
+                                "\tPrice $" + aData[2] + "\tDistance " + aData[3]);
                     }
 
                 }
