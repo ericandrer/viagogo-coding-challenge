@@ -1,3 +1,11 @@
+[![source](https://img.shields.io/badge/source-main-brightgreen.svg)][main]
+[![source](https://img.shields.io/badge/source-test-yellow.svg)][test]
+[![implementation](https://img.shields.io/badge/implementation-java-blue.svg)][java]
+
+[main]: https://github.com/BBK-PiJ-2016-52/viagogo-coding-challenge/tree/master/src/main/java
+[test]: https://github.com/BBK-PiJ-2016-52/viagogo-coding-challenge/tree/master/src/test/java
+[java]: http://docs.oracle.com/javase/8/docs/api/
+
 # Viagogo Coding Challenge
 
 ## Requirements
