@@ -3,9 +3,8 @@ package main;
 import event.EventId;
 import location.Point;
 import pricing.TicketPrice;
-
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class ChallengeMain {
@@ -29,20 +28,20 @@ public class ChallengeMain {
                     myFlag = true;
                     System.out.println("Coordinates accepted: " + Arrays.toString(vars));
 
-
-                    double[][] data = new double[10][3];
+                    double[][] data = new double[10][4];
 
                     for (int i = 0 ; i < 10; i++) {
 
+                        data[i][0] = i;
+
                         EventId newEvent = new EventId();
                         int event = newEvent.uniqueId();
-                        data[i][0] = event;
-
+                        data[i][1] = event;
 
                         TicketPrice tp = new TicketPrice();
                         tp.price();
                         double price = tp.getPrice();
-                        data[i][1] = price;
+                        data[i][2] = price;
 
                         Point userPoint = new Point(x, y);
                         Point eventPoint = new Point();
@@ -50,11 +49,23 @@ public class ChallengeMain {
                         eventPoint.randomY();
                         //System.out.println("Event Location: X Axis " + eventPoint.getX() + " Y Axis " + eventPoint.getY());
                         double distance = userPoint.distanceTo(eventPoint);
-                        data[i][2] = distance;
+                        data[i][3] = distance;
                     }
 
-                    for (int i = 0; i < 10; i++) {
-                        System.out.println("Event " + data[i][0] + "\tPrice " + data[i][1] + "\tDistance " + data[i][2]);
+                    /**
+                     * Using Interface Comparator for sorting distance.
+                     */
+                    Arrays.sort(data, new Comparator<double[]>() {
+                        @Override
+                        public int compare(double[] o1, double[] o2) {
+                            return (int) (o1[3] - o2[3]);
+                        }
+                    });
+
+                    // Printing statement for each of the results.
+                    for (int i = 0; i < data.length ; i++) {
+                        System.out.println("Event #" + data[i][0] + "\tTickets: " + data[i][1] +
+                                "\tPrice $" + data[i][2] + "\tDistance " + data[i][3]);
                     }
 
                 }
