@@ -53,7 +53,8 @@ public class ChallengeMain {
                         Point eventPoint = new Point();
                         eventPoint.randomX();
                         eventPoint.randomY();
-                        //System.out.println("Event Location: X Axis " + eventPoint.getX() + " Y Axis " + eventPoint.getY());
+                        System.out.println("Event # " + data[i][0] + "\t Event Location: X Axis "
+                                + eventPoint.getX() + " Y Axis " + eventPoint.getY());
                         double distance = userPoint.distanceTo(eventPoint);
                         data[i][3] = distance;
                     }
@@ -61,10 +62,12 @@ public class ChallengeMain {
                     // Lambda implementation for sorting the distance column using Comparator interface,
                     Arrays.sort(data, (o1, o2) -> (int) (o1[3] - o2[3]));
 
+                    System.out.println("");
+                    System.out.println("The closest Five events to your coordinates [" + x + ", " + y + "] are: ");
                     // Printing statement for each of the results.
-                    for (double[] aData : data) {
-                        System.out.println("Event #" + aData[0] + "\tTickets: " + aData[1] +
-                                "\tPrice $" + aData[2] + "\tDistance " + aData[3]);
+                    for (int i = 0 ; i < 5 ; i++) {
+                        System.out.println("Event #" + data[i][0] + "\tTickets: " + data[i][1] +
+                                "\tPrice $" + data[i][2] + "\tDistance " + data[i][3]);
                     }
 
                 }
