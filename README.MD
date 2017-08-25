@@ -8,20 +8,12 @@
 
 # Viagogo Coding Challenge
 
-## Requirements
-
-- Code in any language you like but please provide clear instructions on how we should build & run your code
-- Please use any source control system you like, and send us a link (or if you prefer just a zip of your project)
-- The first requirement is your code meets the requirements
-- Secondary requirements are whether your code is idiomatic for the language being coded in, easy to read, and clearly laid out
-
-
 ## Scenario
 
-- Your program should randomly generate seed data
-- Your program should operate in a world that ranges from -10 to +10 (Y axis), and -10 to +10 (X axis)
-- Your program should assume that each co-ordinate can hold a maximum of one event
-- Each event has a unique numeric identifier (e.g. 1, 2, 3)
+- The program should randomly generate seed data
+- The program should operate in a world that ranges from -10 to +10 (Y axis), and -10 to +10 (X axis)
+- The program should assume that each co-ordinate can hold a maximum of one event
+- Each event has a unique numeric identifier (e.g. 0, 1, 2, 3 ...)
 - Each event has zero or more tickets
 - Each ticket has a non-zero price, expressed in US Dollars
 - The distance between two points should be computed as the Manhattan distance
@@ -29,23 +21,48 @@
 
 ## Instructions
 
-- You are required to write a program which accepts a user location as a pair of co-ordinates, and returns a list of the five closest events, along with the cheapest ticket price for each event
-- Please detail any assumptions you have made
+- The program accepts a user location as a pair of co-ordinates, and returns a list of the five closest events, 
+along with the cheapest ticket price for each event, please make sure you're using the right co-ordinates e.g 4,2
+
 - How might you change your program if you needed to support multiple events at the same location?
+
+``` 
+I'll use the class HashMap to identify each event as unique regardless of the location. 
+```
 - How would you change your program if you were working with a much larger world size?
+```
+The program should be modified is small chunks and refactoring where possible to avoid bugs.
+```
 
 
 ## Example Program Run
-
-Please Input Coordinates:
- 
-> 4,2
- 
-Closest Events to (4,2):
- 
-Event 003 - $30.29, Distance 3  
-Event 001 - $35.20, Distance 5  
-Event 006 - $01.40, Distance 12  
+```
+Hello! Welcome to Viagogo Coding Challenge.
+Please enter your coordinates:   
+  
+> 10,-10
+  
+Coordinates accepted: [10, -10]  
+      
+Event # 0.0	   Event Location: X Axis -5.    Y Axis 4.0
+Event # 1.0	   Event Location: X Axis -7.0   Y Axis 8.0
+Event # 2.0	   Event Location: X Axis 3.0    Y Axis 2.0
+Event # 3.0	   Event Location: X Axis -3.0   Y Axis 4.0
+Event # 4.0	   Event Location: X Axis -6.0   Y Axis 7.0
+Event # 5.0	   Event Location: X Axis 3.0    Y Axis 8.0
+Event # 6.0	   Event Location: X Axis 1.0    Y Axis 5.0
+Event # 7.0	   Event Location: X Axis -3.0   Y Axis 4.0
+Event # 8.0	   Event Location: X Axis -8.0   Y Axis 0.0
+Event # 9.0	   Event Location: X Axis -9.0   Y Axis 1.0
+  
+The closest Five events to your coordinates [10, -10] are: 
+  
+Event #2.0	 Tickets: 31.0	 Price $44.46	  Distance 19.0
+Event #6.0	 Tickets: 80.0	 Price $206.14	 Distance 24.0
+Event #5.0	 Tickets: 4.0	  Price $82.92 	 Distance 25.0
+Event #3.0	 Tickets: 16.0	 Price $154.6	  Distance 27.0
+Event #7.0	 Tickets: 51.0	 Price $3.9	    Distance 27.0
+```
 
 #### Repository Structure
 ```
@@ -76,9 +93,3 @@ Event 006 - $01.40, Distance 12
         ├───java
         └───resources
 ```
-
-#### Developed by
- 
-|                                                                                                 | about                                                       | username                               |
---------------------------------------------------------------------------------------------------|----------------------------------------------------------------|---------------------------------------------------|
-<img src="https://avatars0.githubusercontent.com/u/22904851?v=3&u=cfb4a9acace450d6628c1c80ce6e46c985e178d2&s=400"      height="50px" title="Eric Rodriguez"/>        |    Eric Rodriguez   |  [`erodri07 - @BBK-PiJ-2016-52`](https://github.com/BBK-PiJ-2016-52) |
