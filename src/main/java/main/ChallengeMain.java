@@ -59,11 +59,13 @@ public class ChallengeMain {
                         data[i][3] = distance;
                     }
 
-                    // Lambda implementation for sorting the distance column using Comparator interface,
+                    // Lambda implementation for sorting the distance column using Comparator interface.
                     Arrays.sort(data, (o1, o2) -> (int) (o1[3] - o2[3]));
 
                     System.out.println("");
                     System.out.println("The closest Five events to your coordinates [" + x + ", " + y + "] are: ");
+                    System.out.println("");
+
                     // Printing statement for each of the results.
                     for (int i = 0 ; i < 5 ; i++) {
                         System.out.println("Event #" + data[i][0] + "\tTickets: " + data[i][1] +

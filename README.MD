@@ -46,3 +46,39 @@ Closest Events to (4,2):
 Event 003 - $30.29, Distance 3  
 Event 001 - $35.20, Distance 5  
 Event 006 - $01.40, Distance 12  
+
+#### Repository Structure
+```
+├───.gradle
+│   └───3.3
+│       └───taskArtifacts
+├───.idea
+│   ├───libraries
+│   └───modules
+├───build
+│   └───classes
+│       └───main
+│           ├───event
+│           ├───location
+│           ├───main
+│           └───pricing
+├───gradle
+│   └───wrapper
+└───src
+    ├───main
+    │   ├───java
+    │   │   ├───event
+    │   │   ├───location
+    │   │   ├───main
+    │   │   └───pricing
+    │   └───resources
+    └───test
+        ├───java
+        └───resources
+```
+
+#### Developed by
+ 
+|                                                                                                 | about                                                       | username                               |
+--------------------------------------------------------------------------------------------------|----------------------------------------------------------------|---------------------------------------------------|
+<img src="https://avatars0.githubusercontent.com/u/22904851?v=3&u=cfb4a9acace450d6628c1c80ce6e46c985e178d2&s=400"      height="50px" title="Eric Rodriguez"/>        |    Eric Rodriguez   |  [`erodri07 - @BBK-PiJ-2016-52`](https://github.com/BBK-PiJ-2016-52) |
